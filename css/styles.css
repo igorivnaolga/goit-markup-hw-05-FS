@@ -98,10 +98,6 @@ body {
 .menu-item:not(:last-child) {
   margin-right: 40px;
 }
-.menu-link {
-  padding: 24px 0;
-  display: block;
-}
 
 .logo {
   font-family: 'Raleway', sans-serif;
@@ -119,6 +115,8 @@ body {
   color: var(--secondary-color);
 }
 .menu-link {
+  padding-top: 24px;
+  display: block;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -133,15 +131,20 @@ body {
 .menu-link:focus {
   color: #404bbf;
 }
-/* .menu-link:active:after,
-.menu-link:hover:after,
-.menu-link:focus:after {
+.menu-link::after {
+  opacity: 0;
   display: block;
   height: 4px;
   margin-top: 20px;
   background-color: #404bbf;
   content: '';
-} */
+  transition: opacity var(--transition-dur-func);
+}
+.menu-link:hover::after,
+.menu-link:focus::after,
+.menu-link:active::after {
+  opacity: 1;
+}
 .contacts {
   font-style: normal;
 }
@@ -338,10 +341,9 @@ body {
   background-color: #f4f4fd;
   border: 1px solid #e7e9fc;
   border-radius: 4px;
-  transition: background-color var(--transition-dur-func);
-  transition: color var(--transition-dur-func);
-  transition: border var(--transition-dur-func);
-  transition: box-shadow var(--transition-dur-func);
+  transition: background-color var(--transition-dur-func),
+    color var(--transition-dur-func), border var(--transition-dur-func),
+    box-shadow var(--transition-dur-func);
 }
 .btn:hover,
 .btn:focus {
@@ -378,6 +380,33 @@ body {
 .img-item {
   width: 100%;
 }
+.img-overlay-wrapper {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  transform: translate(0, 100%);
+  transition: transform var(--transition-dur-func);
+  background: var(--primary-color);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  padding: 40px 32px;
+}
+.card:hover .overlay,
+.card:focus .overlay {
+  transform: translate(0, 0);
+}
 .card-content-wrapper {
   padding: 32px 16px;
   border: 1px solid #e7e9fc;
@@ -404,9 +433,8 @@ body {
 }
 .customers-list-icon {
   fill: currentColor;
-  transition: color var(--transition-dur-func);
-  transition: border var(--transition-dur-func);
-  transition: fill var(--transition-dur-func);
+  transition: color var(--transition-dur-func),
+    border var(--transition-dur-func), fill var(--transition-dur-func);
 }
 .customers-list-link:hover,
 .customers-list-link:focus {
@@ -478,4 +506,52 @@ body {
 }
 .footer-social-list-icon {
   fill: var(--icon-fill-color);
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background: rgba(46, 47, 66, 0.4);
+  transition: opacity var(--transition-dur-func),
+    visibility var(--transition-dur-func);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 408px;
+  height: 100px;
+  background: #fcfcfc;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.modal-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #e7e9fc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: background-color var(--transition-dur-func),
+    fill var(--transition-dur-func);
+}
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  background-color: #404bbf;
+  fill: #e7e9f7;
 }
