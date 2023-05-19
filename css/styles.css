@@ -95,9 +95,6 @@ body {
 .menu {
   display: flex;
 }
-.menu-item:not(:last-child) {
-  margin-right: 40px;
-}
 
 .logo {
   font-family: 'Raleway', sans-serif;
@@ -114,8 +111,17 @@ body {
 .logo-studio {
   color: var(--secondary-color);
 }
+
+.menu-item {
+  position: relative;
+}
+.menu-item:not(:last-child) {
+  margin-right: 40px;
+}
 .menu-link {
+  color: #404bbf;
   padding-top: 24px;
+  padding-bottom: 24px;
   display: block;
   font-weight: 500;
   font-size: 16px;
@@ -133,10 +139,14 @@ body {
 }
 .menu-link::after {
   opacity: 0;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
   display: block;
   height: 4px;
-  margin-top: 20px;
+
   background-color: #404bbf;
+  border-radius: 2px;
   content: '';
   transition: opacity var(--transition-dur-func);
 }
@@ -341,9 +351,10 @@ body {
   background-color: #f4f4fd;
   border: 1px solid #e7e9fc;
   border-radius: 4px;
-  transition: background-color var(--transition-dur-func),
-    color var(--transition-dur-func), border var(--transition-dur-func),
-    box-shadow var(--transition-dur-func);
+  transition: background-color var(--transition-dur-func);
+  transition: color var(--transition-dur-func);
+  transition: border var(--transition-dur-func);
+  transition: box-shadow var(--transition-dur-func);
 }
 .btn:hover,
 .btn:focus {
@@ -403,7 +414,9 @@ body {
   color: #f4f4fd;
   padding: 40px 32px;
 }
-.card:hover .overlay,
+.card:hover .overlay {
+  transform: translate(0, 0);
+}
 .card:focus .overlay {
   transform: translate(0, 0);
 }
@@ -529,14 +542,17 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 408px;
-  height: 100px;
+  min-height: 576px;
   background: #fcfcfc;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  transition: transform var(--transition-dur-func);
 }
 .modal-close-btn {
   position: absolute;
+  cursor: pointer;
+  padding: 0;
   top: 24px;
   right: 24px;
   display: flex;
@@ -550,8 +566,20 @@ body {
   transition: background-color var(--transition-dur-func),
     fill var(--transition-dur-func);
 }
-.modal-close-btn:hover,
+.modal-close-btn:hover {
+  background-color: #404bbf;
+  border: none;
+}
 .modal-close-btn:focus {
   background-color: #404bbf;
-  fill: #e7e9f7;
+  border: none;
+}
+.modal-close-btn-icon {
+  transition: fill var(--transition-dur-func);
+}
+.modal-close-btn-icon:hover {
+  fill: #ffffff;
+}
+.modal-close-btn-icon:focus {
+  fill: #ffffff;
 }
