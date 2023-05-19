@@ -114,11 +114,13 @@ body {
 
 .menu-item {
   position: relative;
+  color: #404bbf;
 }
 .menu-item:not(:last-child) {
   margin-right: 40px;
 }
 .menu-link {
+  position: relative;
   color: #404bbf;
   padding-top: 24px;
   padding-bottom: 24px;
