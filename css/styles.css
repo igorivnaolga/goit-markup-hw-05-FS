@@ -112,10 +112,6 @@ body {
   color: var(--secondary-color);
 }
 
-.menu-item {
-  position: relative;
-  color: #404bbf;
-}
 .menu-item:not(:last-child) {
   margin-right: 40px;
 }
@@ -128,7 +124,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: var(--secondary-color);
+  color: #404bbf;
   transition: color var(--transition-dur-func);
 }
 
@@ -356,21 +352,20 @@ body {
   background-color: #f4f4fd;
   border: 1px solid #e7e9fc;
   border-radius: 4px;
-  transition: background-color var(--transition-dur-func);
-  transition: color var(--transition-dur-func);
-  transition: border var(--transition-dur-func);
-  transition: box-shadow var(--transition-dur-func);
+  transition: color var(--transition-dur-func),
+    background-color var(--transition-dur-func),
+    border var(--transition-dur-func), box-shadow var(--transition-dur-func);
 }
 .btn:hover {
-  background-color: #404bbf;
   color: #ffffff;
+  background-color: #404bbf;
   border: 1px solid transparent;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .btn:focus {
-  background-color: #404bbf;
   color: #ffffff;
+  background-color: #404bbf;
   border: 1px solid transparent;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -425,12 +420,13 @@ body {
   color: #f4f4fd;
   padding: 40px 32px;
 }
-.card:hover .overlay {
-  transform: translate(0, 0);
-}
+.card:hover .overlay,
 .card:focus .overlay {
   transform: translate(0, 0);
 }
+/* .card:focus .overlay {
+  transform: translate(0, 0);
+} */
 .card-content-wrapper {
   padding: 32px 16px;
   border: 1px solid #e7e9fc;
@@ -577,10 +573,12 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.1);
   transition: background-color var(--transition-dur-func);
   transition: border var(--transition-dur-func);
+  transition: fill var(--transition-dur-func);
 }
 .modal-close-btn:hover {
   background-color: #404bbf;
   border: none;
+  fill: #ffffff;
 }
 .modal-close-btn:focus {
   background-color: #404bbf;
@@ -589,9 +587,9 @@ body {
 .modal-close-btn-icon {
   transition: fill var(--transition-dur-func);
 }
-.modal-close-btn-icon:hover {
+.modal-close-btn:hover .modal-close-btn-icon {
   fill: #ffffff;
 }
-.modal-close-btn-icon:focus {
+.modal-close-btn:hover.modal-close-btn-icon {
   fill: #ffffff;
 }
