@@ -349,7 +349,8 @@ body {
   border-radius: 4px;
   transition: color var(--transition-dur-func),
     background-color var(--transition-dur-func),
-    border var(--transition-dur-func), box-shadow var(--transition-dur-func);
+    border-color var(--transition-dur-func),
+    box-shadow var(--transition-dur-func);
 }
 .btn:hover {
   color: #ffffff;
@@ -415,13 +416,15 @@ body {
   color: #f4f4fd;
   padding: 40px 32px;
 }
-.card:hover .overlay,
+
 .card:focus .overlay {
   transform: translate(0, 0);
 }
-/* .card:focus .overlay {
+
+.card:hover .overlay {
   transform: translate(0, 0);
-} */
+}
+
 .card-content-wrapper {
   padding: 32px 16px;
   border: 1px solid #e7e9fc;
@@ -568,7 +571,6 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.1);
   transition: background-color var(--transition-dur-func);
   transition: border var(--transition-dur-func);
-  transition: fill var(--transition-dur-func);
 }
 .modal-close-btn:hover {
   background-color: #404bbf;
