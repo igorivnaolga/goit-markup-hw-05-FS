@@ -447,17 +447,17 @@ body {
   color: var(--customers-icon-color);
   border: 1px solid currentColor;
   border-radius: 4px;
-  transition: color var(--transition-dur-func);
-  transition: border-color var(--transition-dur-func);
-}
-.customers-list-icon {
-  fill: currentColor;
-  transition: fill var(--transition-dur-func);
+  transition: border-color var(--transition-dur-func),
+    color var(--transition-dur-func);
 }
 .customers-list-link:hover,
 .customers-list-link:focus {
   border-color: #404bbf;
   color: #404bbf;
+}
+.customers-list-icon {
+  fill: currentColor;
+  transition: fill var(--transition-dur-func);
 }
 
 .customers-list-link:hover .customers-list-icon {
