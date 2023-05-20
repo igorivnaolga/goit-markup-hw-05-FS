@@ -416,11 +416,11 @@ body {
   padding: 40px 32px;
 }
 
-.card:focus .overlay {
+.card-link:focus .overlay {
   transform: translate(0, 0);
 }
 
-.card:hover .overlay {
+.card-link:hover .overlay {
   transform: translate(0, 0);
 }
 
@@ -445,7 +445,7 @@ body {
   width: 168px;
   height: 88px;
   color: var(--customers-icon-color);
-  border-color: 1px solid currentColor;
+  border: 1px solid currentColor;
   border-radius: 4px;
   transition: color var(--transition-dur-func);
   transition: border-color var(--transition-dur-func);
@@ -456,7 +456,7 @@ body {
 }
 .customers-list-link:hover,
 .customers-list-link:focus {
-  border-color: 1px solid #404bbf;
+  border-color: #404bbf;
   color: #404bbf;
 }
 
@@ -568,23 +568,21 @@ body {
   border-radius: 50%;
   background: #e7e9fc;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  transition: background-color var(--transition-dur-func);
-  transition: border var(--transition-dur-func);
+  transition: background-color var(--transition-dur-func),
+    border var(--transition-dur-func);
 }
-.modal-close-btn:hover {
-  background-color: #404bbf;
-  border: none;
-}
+.modal-close-btn:hover,
 .modal-close-btn:focus {
   background-color: #404bbf;
   border: none;
 }
+
 .modal-close-btn-icon {
   transition: fill var(--transition-dur-func);
 }
 .modal-close-btn:hover .modal-close-btn-icon {
   fill: #ffffff;
 }
-.modal-close-btn:hover.modal-close-btn-icon {
+.modal-close-btn:focus .modal-close-btn-icon {
   fill: #ffffff;
 }
