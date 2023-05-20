@@ -121,7 +121,6 @@ body {
 }
 .menu-link {
   position: relative;
-  color: #404bbf;
   padding-top: 24px;
   padding-bottom: 24px;
   display: block;
@@ -165,7 +164,12 @@ body {
   gap: 40px;
 }
 
-.tel,
+.tel {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
 .mail {
   font-weight: 400;
   font-size: 16px;
@@ -340,7 +344,6 @@ body {
 }
 .btn {
   padding: 12px 24px;
-
   font-family: 'Roboto', sans-serif;
   cursor: pointer;
   font-weight: 500;
@@ -451,11 +454,12 @@ body {
   color: var(--customers-icon-color);
   border: 1px solid currentColor;
   border-radius: 4px;
+  transition: color var(--transition-dur-func);
+  transition: border var(--transition-dur-func);
 }
 .customers-list-icon {
   fill: currentColor;
-  transition: color var(--transition-dur-func),
-    border var(--transition-dur-func), fill var(--transition-dur-func);
+  transition: fill var(--transition-dur-func);
 }
 .customers-list-link:hover,
 .customers-list-link:focus {
@@ -571,8 +575,8 @@ body {
   border-radius: 50%;
   background: #e7e9fc;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  transition: background-color var(--transition-dur-func),
-    fill var(--transition-dur-func);
+  transition: background-color var(--transition-dur-func);
+  transition: border var(--transition-dur-func);
 }
 .modal-close-btn:hover {
   background-color: #404bbf;
