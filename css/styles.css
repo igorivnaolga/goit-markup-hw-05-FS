@@ -160,29 +160,24 @@ body {
   gap: 40px;
 }
 
-.tel {
+.contact {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
 }
-.mail {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
+
+.contact-link {
+  transition: color var(--transition-dur-func);
 }
-.mail-link {
+.contact-link:not(:last-child) {
   margin-right: 40px;
-  transition: color var(--transition-dur-func);
 }
-.tel-link {
+/* .tel-link {
   transition: color var(--transition-dur-func);
-}
-.mail-link:hover,
-.mail-link:focus,
-.tel-link:hover,
-.tel-link:focus {
+} */
+.contact-link:hover,
+.contact-link:focus {
   color: #404bbf;
 }
 
@@ -451,7 +446,7 @@ body {
   border: 1px solid currentColor;
   border-radius: 4px;
   transition: color var(--transition-dur-func);
-  transition: border var(--transition-dur-func);
+  transition: border-color var(--transition-dur-func);
 }
 .customers-list-icon {
   fill: currentColor;
@@ -459,7 +454,7 @@ body {
 }
 .customers-list-link:hover,
 .customers-list-link:focus {
-  border: 1px solid #404bbf;
+  border-color: 1px solid #404bbf;
   color: #404bbf;
 }
 
