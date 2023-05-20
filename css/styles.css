@@ -141,7 +141,6 @@ body {
   bottom: -1px;
   display: block;
   height: 4px;
-
   background-color: #404bbf;
   border-radius: 2px;
   content: '';
@@ -446,7 +445,7 @@ body {
   width: 168px;
   height: 88px;
   color: var(--customers-icon-color);
-  border: 1px solid currentColor;
+  border-color: 1px solid currentColor;
   border-radius: 4px;
   transition: color var(--transition-dur-func);
   transition: border-color var(--transition-dur-func);
@@ -575,7 +574,6 @@ body {
 .modal-close-btn:hover {
   background-color: #404bbf;
   border: none;
-  fill: #ffffff;
 }
 .modal-close-btn:focus {
   background-color: #404bbf;
