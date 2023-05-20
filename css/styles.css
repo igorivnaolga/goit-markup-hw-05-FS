@@ -134,23 +134,26 @@ body {
 .menu-link:focus {
   color: #404bbf;
 }
-.menu-link::after {
+.menu-link:link::after {
   opacity: 0;
   position: absolute;
   left: 0;
   bottom: -1px;
   display: block;
   height: 4px;
+  width: 100%;
   background-color: #404bbf;
   border-radius: 2px;
   content: '';
   transition: opacity var(--transition-dur-func);
 }
+
+.menu-link:active::after,
 .menu-link:hover::after,
-.menu-link:focus::after,
-.menu-link:active::after {
+.menu-link:focus::after {
   opacity: 1;
 }
+
 .contacts {
   font-style: normal;
 }
