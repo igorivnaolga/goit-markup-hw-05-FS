@@ -128,12 +128,12 @@ body {
   transition: color var(--transition-dur-func);
 }
 
-.menu-link:hover {
+/* .menu-link:hover {
   color: #404bbf;
 }
 .menu-link:focus {
   color: #404bbf;
-}
+} */
 .menu-link:link::after {
   opacity: 0;
   position: absolute;
