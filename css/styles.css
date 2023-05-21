@@ -148,7 +148,7 @@ body {
   transition: opacity var(--transition-dur-func);
 }
 
-.menu-link:active::after,
+.menu-link.current::after,
 .menu-link:hover::after,
 .menu-link:focus::after {
   opacity: 1;
