@@ -124,16 +124,16 @@ body {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: #404bbf;
+  color: var(--secondary-color);
   transition: color var(--transition-dur-func);
 }
 
-/* .menu-link:hover {
+.menu-link:hover {
   color: #404bbf;
 }
 .menu-link:focus {
   color: #404bbf;
-} */
+}
 .menu-link:link::after {
   opacity: 0;
   position: absolute;
@@ -147,10 +147,11 @@ body {
   content: '';
   transition: opacity var(--transition-dur-func);
 }
+.menu-link.current {
+  color: #404bbf;
+}
 
-.menu-link.current::after,
-.menu-link:hover::after,
-.menu-link:focus::after {
+.menu-link.current::after {
   opacity: 1;
 }
 
